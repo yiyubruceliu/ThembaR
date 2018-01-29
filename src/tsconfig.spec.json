@@ -3,6 +3,7 @@
   "compilerOptions": {
     "outDir": "../out-tsc/spec",
     "baseUrl": "./",
+    "experimentalDecorators": true,
     "module": "es2015",
     "target": "es5",
     "types": [
