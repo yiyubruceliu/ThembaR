@@ -23,11 +23,7 @@ contract TestDiscoveryToken {
         Assert.equal(dtokens.balanceOf(tx.origin), expected,
          "Owner should have 0 tokens when created");
 
-        Assert.equal(dtokens.generateTokens(tx.origin, 69), true,
-        "Generation was successful");
-
-        Assert.equal(dtokens.balanceOf(tx.origin), 69,
-        "Generated balance reflected after generation");
+        
 
         
     }
