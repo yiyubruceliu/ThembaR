@@ -13,8 +13,7 @@ contract OrganisationAgreements {
     //variables
 
     //functions
-     function OrganisationAgreements (
-
+     function OrganisationAgreements ()
     }
 
      function SignArrangement(address signer) public returns (bool) {

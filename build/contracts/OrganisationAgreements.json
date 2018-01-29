@@ -1,0 +1,447 @@
+{
+  "contractName": "OrganisationAgreements",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "signer",
+          "type": "address"
+        }
+      ],
+      "name": "SignArrangement",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    }
+  ],
+  "bytecode": "0x6060604052341561000f57600080fd5b60c58061001d6000396000f300606060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680639b3c125c146044575b600080fd5b3415604e57600080fd5b6078600480803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506092565b604051808215151515815260200191505060405180910390f35b60009190505600a165627a7a723058202e2803cd48354ffff47cd0e38838a87fcdc08d3cb8799386688a9822892ae46f0029",
+  "deployedBytecode": "0x606060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680639b3c125c146044575b600080fd5b3415604e57600080fd5b6078600480803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506092565b604051808215151515815260200191505060405180910390f35b60009190505600a165627a7a723058202e2803cd48354ffff47cd0e38838a87fcdc08d3cb8799386688a9822892ae46f0029",
+  "sourceMap": "26:424:0:-;;;297:42;;;;;;;;26:424;;;;;;",
+  "deployedSourceMap": "26:424:0:-;;;;;;;;;;;;;;;;;;;;;;;;346:95;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;403:4;346:95;;;:::o",
+  "source": "pragma solidity ^0.4.16;\n\ncontract OrganisationAgreements {\n    \n    struct Agreement {\n        address  arranger;\n        address arrangee;\n        uint  direction;\n        bool  signed;\n        mapping(uint => uint) range;\n    }\n    Agreement[] agreements;\n    //variables\n\n    //functions\n     function OrganisationAgreements ()\n{\n    }\n\n     function SignArrangement(address signer) public returns (bool) {\n         //signed ==true\n    }\n\n     \n}\n",
+  "sourcePath": "/home/bruce/Documents/ThembaR/contracts/Arrangement.sol",
+  "ast": {
+    "attributes": {
+      "absolutePath": "/home/bruce/Documents/ThembaR/contracts/Arrangement.sol",
+      "exportedSymbols": {
+        "OrganisationAgreements": [
+          30
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".16"
+          ]
+        },
+        "id": 1,
+        "name": "PragmaDirective",
+        "src": "0:24:0"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            30
+          ],
+          "name": "OrganisationAgreements",
+          "scope": 31
+        },
+        "children": [
+          {
+            "attributes": {
+              "canonicalName": "OrganisationAgreements.Agreement",
+              "name": "Agreement",
+              "scope": 30,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "arranger",
+                  "scope": 14,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "address",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "type": "address"
+                    },
+                    "id": 2,
+                    "name": "ElementaryTypeName",
+                    "src": "96:7:0"
+                  }
+                ],
+                "id": 3,
+                "name": "VariableDeclaration",
+                "src": "96:17:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "arrangee",
+                  "scope": 14,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "address",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "type": "address"
+                    },
+                    "id": 4,
+                    "name": "ElementaryTypeName",
+                    "src": "123:7:0"
+                  }
+                ],
+                "id": 5,
+                "name": "VariableDeclaration",
+                "src": "123:16:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "direction",
+                  "scope": 14,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint",
+                      "type": "uint256"
+                    },
+                    "id": 6,
+                    "name": "ElementaryTypeName",
+                    "src": "149:4:0"
+                  }
+                ],
+                "id": 7,
+                "name": "VariableDeclaration",
+                "src": "149:15:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "signed",
+                  "scope": 14,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "bool",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "bool",
+                      "type": "bool"
+                    },
+                    "id": 8,
+                    "name": "ElementaryTypeName",
+                    "src": "174:4:0"
+                  }
+                ],
+                "id": 9,
+                "name": "VariableDeclaration",
+                "src": "174:12:0"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "name": "range",
+                  "scope": 14,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "mapping(uint256 => uint256)",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "type": "mapping(uint256 => uint256)"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 10,
+                        "name": "ElementaryTypeName",
+                        "src": "204:4:0"
+                      },
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 11,
+                        "name": "ElementaryTypeName",
+                        "src": "212:4:0"
+                      }
+                    ],
+                    "id": 12,
+                    "name": "Mapping",
+                    "src": "196:21:0"
+                  }
+                ],
+                "id": 13,
+                "name": "VariableDeclaration",
+                "src": "196:27:0"
+              }
+            ],
+            "id": 14,
+            "name": "StructDefinition",
+            "src": "69:161:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "agreements",
+              "scope": 30,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "struct OrganisationAgreements.Agreement storage ref[] storage ref",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "length": null,
+                  "type": "struct OrganisationAgreements.Agreement storage ref[] storage pointer"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "Agreement",
+                      "referencedDeclaration": 14,
+                      "type": "struct OrganisationAgreements.Agreement storage pointer"
+                    },
+                    "id": 15,
+                    "name": "UserDefinedTypeName",
+                    "src": "235:9:0"
+                  }
+                ],
+                "id": 16,
+                "name": "ArrayTypeName",
+                "src": "235:11:0"
+              }
+            ],
+            "id": 17,
+            "name": "VariableDeclaration",
+            "src": "235:22:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": true,
+              "modifiers": [
+                null
+              ],
+              "name": "OrganisationAgreements",
+              "payable": false,
+              "scope": 30,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 18,
+                "name": "ParameterList",
+                "src": "329:2:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 19,
+                "name": "ParameterList",
+                "src": "332:0:0"
+              },
+              {
+                "attributes": {
+                  "statements": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 20,
+                "name": "Block",
+                "src": "332:7:0"
+              }
+            ],
+            "id": 21,
+            "name": "FunctionDefinition",
+            "src": "297:42:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "SignArrangement",
+              "payable": false,
+              "scope": 30,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "signer",
+                      "scope": 29,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 22,
+                        "name": "ElementaryTypeName",
+                        "src": "371:7:0"
+                      }
+                    ],
+                    "id": 23,
+                    "name": "VariableDeclaration",
+                    "src": "371:14:0"
+                  }
+                ],
+                "id": 24,
+                "name": "ParameterList",
+                "src": "370:16:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 29,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 25,
+                        "name": "ElementaryTypeName",
+                        "src": "403:4:0"
+                      }
+                    ],
+                    "id": 26,
+                    "name": "VariableDeclaration",
+                    "src": "403:4:0"
+                  }
+                ],
+                "id": 27,
+                "name": "ParameterList",
+                "src": "402:6:0"
+              },
+              {
+                "attributes": {
+                  "statements": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 28,
+                "name": "Block",
+                "src": "409:32:0"
+              }
+            ],
+            "id": 29,
+            "name": "FunctionDefinition",
+            "src": "346:95:0"
+          }
+        ],
+        "id": 30,
+        "name": "ContractDefinition",
+        "src": "26:424:0"
+      }
+    ],
+    "id": 31,
+    "name": "SourceUnit",
+    "src": "0:451:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "1.0.1",
+  "updatedAt": "2018-01-29T19:54:17.820Z"
+}
