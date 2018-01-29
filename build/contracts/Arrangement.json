@@ -1,0 +1,69 @@
+{
+  "contractName": "Arrangement",
+  "abi": [],
+  "bytecode": "0x60606040523415600e57600080fd5b603580601b6000396000f3006060604052600080fd00a165627a7a723058207c7c2be600695e3cab61823a37e15c8c7ca142bb9068cf1f3e256214006e5e500029",
+  "deployedBytecode": "0x6060604052600080fd00a165627a7a723058207c7c2be600695e3cab61823a37e15c8c7ca142bb9068cf1f3e256214006e5e500029",
+  "sourceMap": "26:543:1:-;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "26:543:1:-;;;;;",
+  "source": "pragma solidity ^0.4.16;\n\ncontract Arrangement {\n    //private address arranger;\n    // private address arrangee;\n    // private uint direction;\n    // private bool signed;\n    // mapping(uint => uint) private range;\n    //variables\n\n    //functions\n    // public Arrangement(address _arranger,address arrangee, uint _direction, mapping(uint => uint) _range) {\n    //     //initialize the arrangement of the two accounts\n    //     //signed == false\n    // }\n\n    //  SignArrangement(address signer) public returns (bool) {\n    //      //signed ==true\n    // }\n\n     \n}\n",
+  "sourcePath": "/home/bruce/Documents/ThembaR/contracts/Arrangement.sol",
+  "ast": {
+    "attributes": {
+      "absolutePath": "/home/bruce/Documents/ThembaR/contracts/Arrangement.sol",
+      "exportedSymbols": {
+        "Arrangement": [
+          5
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".16"
+          ]
+        },
+        "id": 4,
+        "name": "PragmaDirective",
+        "src": "0:24:1"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            5
+          ],
+          "name": "Arrangement",
+          "nodes": [
+            null
+          ],
+          "scope": 6
+        },
+        "id": 5,
+        "name": "ContractDefinition",
+        "src": "26:543:1"
+      }
+    ],
+    "id": 6,
+    "name": "SourceUnit",
+    "src": "0:570:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "1.0.1",
+  "updatedAt": "2018-01-29T13:30:54.064Z"
+}
