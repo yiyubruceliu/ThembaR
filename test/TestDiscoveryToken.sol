@@ -10,7 +10,7 @@ contract TestDiscoveryToken {
 
         MiniMeToken dtokens = new MiniMeToken(
             0x00000000000000123, 
-            0x00000000000000123, 
+            0x00000000000000124, 
             0, 
             "Discovery Poes Tokens",
             0,
@@ -22,5 +22,13 @@ contract TestDiscoveryToken {
         
         Assert.equal(dtokens.balanceOf(tx.origin), expected,
          "Owner should have 0 tokens when created");
+
+        Assert.equal(dtokens.generateTokens(tx.origin, 69), true,
+        "Generation was successful");
+
+        Assert.equal(dtokens.balanceOf(tx.origin), 69,
+        "Generated balance reflected after generation");
+
+        
     }
 }
