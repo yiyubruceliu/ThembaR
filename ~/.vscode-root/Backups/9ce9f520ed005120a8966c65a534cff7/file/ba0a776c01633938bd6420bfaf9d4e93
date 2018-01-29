@@ -1,0 +1,28 @@
+file:///home/rendani/Documents/thembaR/ThembaR/contracts/Agreement.sol
+pragma solidity ^0.4.16;
+
+    contract Agreement {
+        address owner;
+        address arrangee;
+        uint  direction;
+        bool  signed;
+        uint left;
+        uint right;
+
+        function Agreement(address _arrangee, uint _direction, uint _left, uint _right) public {
+            owner = msg.sender;
+            arrangee = _arrangee;
+            direction = _direction;
+            left = _left;
+            right = _right;
+        }
+        function signAgreement() public returns (bool) {
+             if (msg.sender == arrangee) {
+                     signed = true;
+                     return true;
+             }
+             return false;
+               
+         }
+         
+    }
