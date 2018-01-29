@@ -1,18 +1,20 @@
 pragma solidity ^0.4.16;
 
-contract Arrangement {
+contract OrganisationAgreements {
     
-     address private arranger;
-     address private arrangee;
-     uint private direction;
-     bool private signed;
-     mapping(uint => uint) private range;
+    struct Agreement {
+        address  arranger;
+        address arrangee;
+        uint  direction;
+        bool  signed;
+        mapping(uint => uint) range;
+    }
+    Agreement[] agreements;
     //variables
 
     //functions
-     function Arrangement (address _arranger,address arrangee, uint _direction, mapping(uint => uint) _range) public {
-        //initialize the arrangement of the two accounts
-        //signed == false
+     function OrganisationAgreements (
+
     }
 
      function SignArrangement(address signer) public returns (bool) {
