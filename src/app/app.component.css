@@ -16,7 +16,7 @@ img {
     background-size: cover;
 }
 
-@media screen and (min-width: 480px) {
+/* @media screen and (min-width: 480px) {
     .jumbotron {
         height: 450px;
     }
@@ -26,4 +26,4 @@ img {
     .jumbotron {
         height: 900px;
     }
-}
+} */
