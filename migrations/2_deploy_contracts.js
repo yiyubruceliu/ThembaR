@@ -1,14 +1,13 @@
 var Agreement = artifacts.require("./Agreement.sol");
-var MiniMeFactory = artifacts.require("./MiniMeTokenFactory.sol");
+import "./BasicToken.sol";
 var ThembaR = artifacts.require("./ThembaR.sol");
 
 
 module.exports = function(deployer) {
-  deployer.deploy(MiniMeFactory).then(() =>{
-    return MiniMeFactory.deployed()
+  deployer.deploy(StandardToken).then(() =>{
+    return StandardToken.deployed()
       .then((result) => {
-        factory = result.address
-        return ThembaR.new(factory.address)
+        return ThembaR.new()
           }).then((instance) => {
             token = instance.address
             return Agreement.new(token.address)
