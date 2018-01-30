@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-
 
 @Component({
-  selector: 'app-create-agreement',
-  templateUrl: './create-agreement.component.html',
-  styleUrls: ['./create-agreement.component.css']
+  selector: 'app-approve-agreement',
+  templateUrl: './approve-agreement.component.html',
+  styleUrls: ['./approve-agreement.component.css']
 })
-export class CreateAgreementComponent implements OnInit {
+export class ApproveAgreementComponent implements OnInit {
 
   constructor() { }
 
@@ -28,6 +26,13 @@ export class CreateAgreementComponent implements OnInit {
     {value: 1, viewValue: 'Bidirectional'},
     {value: 2, viewValue: 'Company B to A'}
   ];
+
+  partners = [
+    {address: 'Test 1', viewValue: 'Harry Salon'},
+    {address: 'Test 2', viewValue: 'Max Weeves'},
+    {address: 'Test 3', viewValue: 'Three'}
+  ];
+  selection = 3;
 }
 
 interface AgreementObj {

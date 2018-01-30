@@ -11,6 +11,8 @@ import { CustomersComponent } from './customers/customers.component';
 import { PartnersComponent } from './partners/partners.component';
 import { RegisterComponent } from './register/register.component';
 import { CreateAgreementComponent } from './create-agreement/create-agreement.component';
+import { ApproveAgreementComponent } from './approve-agreement/approve-agreement.component';
+import { EarnPointsComponent } from './earn-points/earn-points.component';
 
 @NgModule({
   imports: [
@@ -33,10 +35,12 @@ import { CreateAgreementComponent } from './create-agreement/create-agreement.co
       {path: 'customers', component:CustomersComponent},
       {path: 'partners', component:PartnersComponent},
       {path: 'register', component:RegisterComponent},
-      {path: 'create-agreement', component:CreateAgreementComponent}
+      {path: 'create-agreement', component:CreateAgreementComponent},
+      {path: 'approve-agreement', component:ApproveAgreementComponent},
+      {path: 'earn-points', component:EarnPointsComponent}
     ])
   ],
-  declarations: [MainComponent, CustomersComponent, PartnersComponent, RegisterComponent, CreateAgreementComponent],
+  declarations: [MainComponent, CustomersComponent, PartnersComponent, RegisterComponent, CreateAgreementComponent, ApproveAgreementComponent, EarnPointsComponent],
   providers:[]
 })
 export class BusinessModule { }
