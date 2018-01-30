@@ -18,11 +18,11 @@ contract ThembaR is MiniMeToken {
              _owner = msg.sender;
         }
          address[] private agreements;
-        function addAgreement(address _arrangee, uint _direction, uint _left, uint __right, bool _canPort ) public {
-            require(_owner == msg.sender);
-            Agreement a = new Agreement( _arrangee, this, _direction,  _left, __right, _canPort);
-            agreements.push(a);
-        }
+        // function addAgreement(address _arrangee, uint _direction, uint _left, uint __right, bool _canPort ) public {
+        //     require(_owner == msg.sender);
+        //     Agreement a = new Agreement( _arrangee, this, _direction,  _left, __right, _canPort);
+        //     agreements.push(a);
+        // }
        
         function specialTransfer(address _to, uint amount, address _from, address agreement) public {
             for (uint i = 0; i < agreements.length; i++) {
