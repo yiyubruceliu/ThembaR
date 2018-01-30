@@ -8,8 +8,9 @@ contract ThembaR is BasicToken {
     string public name = "ExampleToken"; 
     string public symbol = "EGT";
     uint public decimals = 18;
-    uint public INITIAL_SUPPLY = 10000 * (10 ** decimals);
+    uint public INITIAL_SUPPLY = 10000 ;//* (10 ** decimals);
    function ThembaR() public {
+        _owner = msg.sender;
         totalSupply_ = INITIAL_SUPPLY;
         balances[msg.sender] = INITIAL_SUPPLY;
     }
