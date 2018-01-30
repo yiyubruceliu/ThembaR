@@ -11,6 +11,11 @@
             "label": "Ctrl+Shift+T",
             "isNative": true
         },
+        "workbench.action.openRecent": {
+            "id": "workbench.action.openRecent",
+            "label": "Ctrl+R",
+            "isNative": true
+        },
         "workbench.action.files.save": {
             "id": "workbench.action.files.save",
             "label": "Ctrl+S",
@@ -432,7 +437,8 @@
     "pickerWorkingDir": "/home/rendani/Documents/thembaR",
     "openedPathsList": {
         "workspaces": [
-            "/home/rendani/Documents/thembaR/ThembaR",
+            "/home/bruce/Documents/Projects/ThembaR",
+            "/home/bruce/Documents/Projects/ThembaR",
             "/home/rendani/Documents/thembaR/ThembaR"
         ],
         "files": []
