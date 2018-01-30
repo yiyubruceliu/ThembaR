@@ -1,0 +1,13 @@
+file:///home/rendani/Documents/thembaR/ThembaR/test/thembaRFactory.js
+var ThembaRFactory = artifacts.require("./ThembaRFactory.sol");
+
+contract('ThembaRFactory', function(accounts) {
+    it("should put 0 ThembaRFactory tokens in the first account", function() {
+        return ThembaRFactory.deployed().then(function(instance) {
+          return instance.balanceOf.call({from: web3.eth.accounts[1], gas:3000000});
+        }).then(function(balance) {
+          assert.equal(balance.valueOf(), 0, "0 was in the first account");
+        });
+      });
+      
+});
