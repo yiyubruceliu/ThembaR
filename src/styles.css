@@ -35,6 +35,10 @@ mat-grid-tile:hover {
     margin-right:auto;
 }
 
+.formButtonContainer > button {
+    background: #01579b !important;
+}
+
 .formButtonContainer{
     position: relative;
     display: block;

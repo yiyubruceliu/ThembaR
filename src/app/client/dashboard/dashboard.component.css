@@ -1,5 +1,7 @@
 .box {
     display: block;
+    width:70%;
+    text-align: center;
   }
   
   .box>div {
