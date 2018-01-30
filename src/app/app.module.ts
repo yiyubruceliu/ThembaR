@@ -8,7 +8,6 @@ import { MatButtonModule, MatCheckboxModule, MatDividerModule, MatGridList, MatG
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import {MetaModule} from './meta/meta.module';
 import {ClientModule} from './client/client.module';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './client/dashboard/dashboard.component';
@@ -19,13 +18,12 @@ import { DashboardComponent } from './client/dashboard/dashboard.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    MetaModule,
     MatButtonModule,
     MatDividerModule,
     MatGridListModule,

@@ -1,23 +1,34 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { MatButtonModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatDividerModule, MatGridListModule, MatFormFieldModule, MatOptionModule, MatSelectModule, MatInputModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
+import { TokenComponent } from './token/token.component';
+import { Token } from '@angular/compiler';
 
 @NgModule({
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule,
     MatButtonModule,
+    MatDividerModule,
+    MatGridListModule,
+    MatFormFieldModule,
+    MatOptionModule,
+    MatSelectModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
     RouterModule.forChild([
-      {path: 'client', component:DashboardComponent}
+      {path: 'client', component:DashboardComponent},
+      {path: 'token', component:TokenComponent}
     ])
   ],
   exports:[RouterModule],
-  declarations: [DashboardComponent]
+  declarations: [DashboardComponent, TokenComponent]
 })
 export class ClientModule { }
