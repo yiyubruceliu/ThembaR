@@ -2,13 +2,7 @@
     <h4>{{customer.name}}</h4>
     Loyalty Programs
 </div>
-
-<pre>
-  
-
-  
-</pre>
-<div class="box">
+<div class="container box">
     <div class="programCard" *ngFor="let company of customer.companies">
       <img src={{company.logo}} alt="Avatar" style="width:100%">
       <div class="container">
@@ -19,7 +13,7 @@
           {{company.balance}} {{company.symbol}}
         </div>
         <div class="buttonContainer">
-          <button class="btn btn-info cardButton">VIEW</button>
+          <button class="btn btn-info cardButton" routerLink="/token">VIEW</button>
         </div>
       </div>
     </div>
