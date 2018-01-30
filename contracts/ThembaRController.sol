@@ -2,26 +2,37 @@ pragma solidity ^0.4.16;
 import "./ThembaR.sol";
 
 contract ThembaRController {
-    address[] private tokens;
+    struct program {
+        address company;
+        address token;
+    }
+    mapping(uint=>program) private tokens;
+    uint numTokens=0;
     address _owner;
     function ThembaRController() public {
         _owner = msg.sender;
     }
     function createNewToken(string _name, string _symbol) public { //business should call this
         ThembaR newToken = new ThembaR(msg.sender, _name, _symbol);
-        tokens.push(newToken);
+        
+        numTokens++;
+        tokens[numTokens] = program(msg.sender,newToken);
     }
-    function getCustomerTokens() external returns (address[], uint[]) {
-        address[] tokenOwners;
-        uint[] balances;
-        for (uint i = 0; i < tokens.length;i++) {
-            ThembaR temp = ThembaR(tokens[i]);
+     function createBizToken(address ownerAdd, string _name, string _symbol) public { //business should call this
+        ThembaR newToken = new ThembaR(ownerAdd, _name, _symbol);
+        numTokens++;
+        tokens[numTokens] = program(ownerAdd,newToken);
+    }
+    
+    function getCustomerTokens() external returns (address[]) {
+        address[] customerTokens;
+        for (uint i=0;i<numTokens;i++) {
+            ThembaR temp = ThembaR(tokens[i].token);
             if (temp.balanceOf(msg.sender) >= 0) {
-                tokenOwners.push(temp.getOwner());
-                balances.push(temp.balanceOf(msg.sender));
+                customerTokens.push(temp);
             }
         }
-        return (tokenOwners, balances);
+        return customerTokens;
     }
 }
 
