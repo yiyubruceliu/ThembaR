@@ -4,7 +4,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { MatButtonModule } from '@angular/material';
+import { MatButtonModule, MatCardModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -13,6 +13,7 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     HttpModule,
     MatButtonModule,
+    MatCardModule,
     RouterModule.forChild([
       {path: 'client', component:DashboardComponent}
     ])
