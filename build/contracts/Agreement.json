@@ -1,8 +1,8 @@
 {
   "contractName": "Agreement",
   "abi": [],
-  "bytecode": "0x60606040523415600e57600080fd5b603580601b6000396000f3006060604052600080fd00a165627a7a72305820132f4d57006953bf688f54aabf0488bf16dbc98ee62e4ceabc36ce3f005b44420029",
-  "deployedBytecode": "0x6060604052600080fd00a165627a7a72305820132f4d57006953bf688f54aabf0488bf16dbc98ee62e4ceabc36ce3f005b44420029",
+  "bytecode": "0x60606040523415600e57600080fd5b603580601b6000396000f3006060604052600080fd00a165627a7a72305820f775daf62a94c93c86c70e4e66e8efb1a2aff8948510612ceb9fc81042b9063b0029",
+  "deployedBytecode": "0x6060604052600080fd00a165627a7a72305820f775daf62a94c93c86c70e4e66e8efb1a2aff8948510612ceb9fc81042b9063b0029",
   "sourceMap": "55:2909:0:-;;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "55:2909:0:-;;;;;",
   "source": "pragma solidity ^0.4.16;\n\nimport \"./ThembaR.sol\";\n\n    contract Agreement {\n        // address owner;\n        // address ownerToken;\n        // address signer;\n        // address signerToken;\n        // uint  direction;\n        // uint left;\n        // uint right;\n        // bool  signed;\n        // bool canPort;\n\n        // function Agreement(address _signer, address _ownerToken, uint _direction, uint _left, uint _right, bool _canPort) public {\n        //     owner = msg.sender;\n        //     signer = _signer;\n        //     ownerToken = _ownerToken;\n        //     direction = _direction;\n        //     left = _left;\n        //     right = _right;\n        //     signed = false;\n        //     canPort = _canPort;\n        // }\n        // function signArrangement(address _signerToken) public returns (bool) {\n        //      if (msg.sender == signer) {\n        //              signerToken = _signerToken;\n        //              signed = true;\n        //              return true;\n        //      }\n        //      return false;    \n        // }\n        // function checkCredential(address _from) private view returns (bool) {\n        //     return (direction == 2 || (direction == 0 && _from == owner) || (direction == 1 && _from == signer));\n        // }\n        // function port(address _fromToken, uint amount) external returns (bool) {\n        //     require(canPort);\n        //     require((_fromToken == ownerToken) || (_fromToken == signerToken));\n        //     ThembaR tr = ThembaR(_fromToken);\n        //     require(tr.balanceOf(msg.sender) >= amount);\n        //     uint otherAmount;\n        //     ThembaR otherAddress;\n        //     if (_fromToken == ownerToken && checkCredential(_fromToken)) {\n        //          otherAmount = amount*(right/left);\n        //          otherAddress = ThembaR(signerToken);\n        //         tr.specialTransfer(signer, amount, msg.sender, this);\n        //         otherAddress.specialTransfer(msg.sender, otherAmount,signer,this);\n        //     } else if (checkCredential(_fromToken)) {\n        //          otherAmount = amount*(left/right);\n        //          otherAddress = ThembaR(ownerToken);\n        //         tr.specialTransfer(owner, amount, msg.sender, this);\n        //         otherAddress.specialTransfer(msg.sender, otherAmount,owner, this);\n        //     } \n\n        // }\n        //   function portAndPay(address _fromToken, uint amount) external returns (bool) {\n        //     require((_fromToken == ownerToken) || (_fromToken == signerToken));\n        //     ThembaR tr = ThembaR(_fromToken);\n        //     require(tr.balanceOf(msg.sender) >= amount);\n        //     if (_fromToken == ownerToken && checkCredential(_fromToken)) {\n        //         tr.specialTransfer(signer, amount, msg.sender, this);          \n        //     } else if (checkCredential(_fromToken)) {\n        //         tr.specialTransfer(owner, amount, msg.sender, this);\n        //     } \n\n        // }\n    }\n",
@@ -32,7 +32,7 @@
       },
       {
         "attributes": {
-          "SourceUnit": 105,
+          "SourceUnit": 48,
           "absolutePath": "/home/rendani/Documents/thembaR/ThembaR/contracts/ThembaR.sol",
           "file": "./ThembaR.sol",
           "scope": 4,
@@ -80,5 +80,5 @@
   },
   "networks": {},
   "schemaVersion": "1.0.1",
-  "updatedAt": "2018-01-30T08:40:12.796Z"
+  "updatedAt": "2018-01-30T09:11:22.823Z"
 }
