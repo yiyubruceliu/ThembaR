@@ -1,4 +1,3 @@
-
 var Agreement = artifacts.require("./Agreement.sol");
 var MiniMeFactory = artifacts.require("./MiniMeTokenFactory.sol");
 var ThembaR = artifacts.require("./ThembaR.sol");
@@ -15,4 +14,5 @@ module.exports = function(deployer) {
             return Agreement.new(token.address)
           })
        })
+
 };
