@@ -18,7 +18,7 @@ import { DashboardComponent } from './client/dashboard/dashboard.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
