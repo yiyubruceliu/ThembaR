@@ -24,7 +24,7 @@
     <input type="file" placeholder="Logo" required [(ngModel)]="company.logo" name="logo" required>
     <br>
     <div class="formButtonContainer">
-        <button type="submit" class="btn btn-primary" >Submit</button>
+        <button type="submit" class="btn btn-primary" (click)="registerToken()">Submit</button>
     </div>
     
   </form>

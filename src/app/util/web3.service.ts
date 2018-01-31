@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
-import Web3 from 'web3';
-import {default as contract} from 'truffle-contract';
+import * as Web3 from 'web3';
+import * as contract from 'truffle-contract';
+//import Web3 from 'web3';
+//import {default as contract} from 'truffle-contract';
 import {Subject} from 'rxjs/Rx';
 
 declare let window: any;
@@ -27,7 +29,7 @@ export class Web3Service {
     if (typeof window.web3 !== 'undefined') {
       // Use Mist/MetaMask's provider
       console.log(window.web3.currentProvider);
-      console.log("FOK: "+typeof(Web3));
+      console.log("FOK: "+typeof(contract));
       this.web3 = new Web3(window.web3.currentProvider);
     } else {
       console.log('No web3? You should consider trying MetaMask!');

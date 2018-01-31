@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Web3Service} from '../util/web3.service';
 
 @Component({
   selector: 'app-not-found',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotFoundComponent implements OnInit {
 
-  constructor() { }
+  constructor(private web3Service: Web3Service) { 
+    console.log(web3Service);
+  }
 
   ngOnInit() {
+
   }
 
 }
