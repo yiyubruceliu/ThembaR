@@ -1,0 +1,34 @@
+[2018-01-31 17:07:53.122] [exthost1] [info] extension host started
+[2018-01-31 17:07:53.165] [exthost1] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"activationEvent":"*"}
+[2018-01-31 17:07:53.165] [exthost1] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/emmet/out/extension
+[2018-01-31 17:07:53.244] [exthost1] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"activationEvent":"*"}
+[2018-01-31 17:07:53.244] [exthost1] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/git/out/main
+[2018-01-31 17:07:53.310] [exthost1] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"activationEvent":"*"}
+[2018-01-31 17:07:53.310] [exthost1] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/merge-conflict/out/extension
+[2018-01-31 17:07:53.322] [exthost1] [info] ExtensionService#_doActivateExtension PKief.material-icon-theme {"startup":true,"activationEvent":"*"}
+[2018-01-31 17:07:53.322] [exthost1] [info] ExtensionService#loadCommonJSModule /home/bruce/.vscode/extensions/PKief.material-icon-theme-3.2.2/out/src/extension
+[2018-01-31 17:07:53.357] [exthost1] [info] ExtensionService#_doActivateExtension esbenp.prettier-vscode {"startup":true,"activationEvent":"*"}
+[2018-01-31 17:07:53.357] [exthost1] [info] ExtensionService#loadCommonJSModule /home/bruce/.vscode/extensions/esbenp.prettier-vscode-1.1.2/out/src/extension
+[2018-01-31 17:07:53.519] [exthost1] [info] ExtensionService#_doActivateExtension swyphcosmo.spellchecker {"startup":true,"activationEvent":"*"}
+[2018-01-31 17:07:53.519] [exthost1] [info] ExtensionService#loadCommonJSModule /home/bruce/.vscode/extensions/swyphcosmo.spellchecker-1.2.13/out/src/extension
+[2018-01-31 17:07:54.135] [exthost1] [info] ExtensionService#_doActivateExtension ms-vscode.csharp {"startup":true,"activationEvent":"workspaceContains:*.csproj,*.sln,*.csx,*.cake,**/*.csproj,**/*.sln,**/*.csx,**/*.cake"}
+[2018-01-31 17:07:54.135] [exthost1] [info] ExtensionService#loadCommonJSModule /home/bruce/.vscode/extensions/ms-vscode.csharp-1.13.1/out/src/main
+[2018-01-31 17:07:54.385] [exthost1] [info] eager extensions activated
+[2018-01-31 17:07:56.636] [exthost1] [info] ExtensionService#_doActivateExtension vscode.configuration-editing {"startup":false,"activationEvent":"onLanguage:jsonc"}
+[2018-01-31 17:07:56.636] [exthost1] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/configuration-editing/out/extension
+[2018-01-31 17:07:56.668] [exthost1] [info] ExtensionService#_doActivateExtension vscode.json {"startup":false,"activationEvent":"onLanguage:jsonc"}
+[2018-01-31 17:07:56.668] [exthost1] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/json/client/out/jsonMain
+[2018-01-31 17:08:08.928] [exthost1] [info] ExtensionService#_doActivateExtension vscode.css {"startup":false,"activationEvent":"onLanguage:css"}
+[2018-01-31 17:08:08.928] [exthost1] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/css/client/out/cssMain
+[2018-01-31 17:08:19.802] [exthost1] [info] ExtensionService#_doActivateExtension vscode.html {"startup":false,"activationEvent":"onLanguage:html"}
+[2018-01-31 17:08:19.802] [exthost1] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/html/client/out/htmlMain
+[2018-01-31 17:08:20.120] [exthost1] [info] ExtensionService#_doActivateExtension leizongmin.node-module-intellisense {"startup":false,"activationEvent":"onLanguage:html"}
+[2018-01-31 17:08:20.120] [exthost1] [info] ExtensionService#loadCommonJSModule /home/bruce/.vscode/extensions/leizongmin.node-module-intellisense-1.5.0/out/src/extension
+[2018-01-31 17:08:25.111] [exthost1] [info] ExtensionService#_doActivateExtension vscode.extension-editing {"startup":false,"activationEvent":"onLanguage:typescript"}
+[2018-01-31 17:08:25.111] [exthost1] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/extension-editing/out/extension
+[2018-01-31 17:08:25.131] [exthost1] [info] ExtensionService#_doActivateExtension vscode.typescript {"startup":false,"activationEvent":"onLanguage:typescript"}
+[2018-01-31 17:08:25.131] [exthost1] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/typescript/out/extension
+[2018-01-31 17:08:25.206] [exthost1] [info] ExtensionService#_doActivateExtension christian-kohler.npm-intellisense {"startup":false,"activationEvent":"onLanguage:typescript"}
+[2018-01-31 17:08:25.206] [exthost1] [info] ExtensionService#loadCommonJSModule /home/bruce/.vscode/extensions/christian-kohler.npm-intellisense-1.3.0/out/src/extension
+[2018-01-31 17:08:25.222] [exthost1] [info] ExtensionService#_doActivateExtension sourcegraph.javascript-typescript {"startup":false,"activationEvent":"onLanguage:typescript"}
+[2018-01-31 17:08:25.222] [exthost1] [info] ExtensionService#loadCommonJSModule /home/bruce/.vscode/extensions/sourcegraph.javascript-typescript-0.0.5/out/extension
