@@ -1,22 +1,42 @@
 const ThembaRController = artifacts.require("./ThembaRController.sol");
 const ThembaR = artifacts.require("./ThembaR.sol");
 const Agreement = artifacts.require("./Agreement.sol");
+var sha3 = require('solidity-sha3').default
+const BigNumber = web3.BigNumber
+require('chai')
+  .use(require('chai-as-promised'))
+  .use(require('chai-bignumber')(BigNumber))
+  .should()
+
+const assertRevert = artifacts.require("./helpers/assertRevert.js");
+
 contract('ThembaRController', function ([owner, discovery, mnb]) {
+
   let thembaRController
   beforeEach('setup contract for each test', async function () {
     thembaRController = await ThembaRController.new()
 })
 
-    // it('added a new token to the list1', async function () {
-    //     assert.notEqual("The array is not empty and it should be",(await thembaRController.getAllTokens() == []), false)
-    //     await thembaRController.createBizToken(discovery, "Vatality","VP")
-    //     await thembaRController.createBizToken(0xab4f170172a333d4e1fe7dc5d1a5f8a9e2d6671c, "Mugg and bean","MB")
-    //     var tokenArray = await thembaRController.getAllTokens();
-    //     console.log(tokenArray[0]);
-    //     thembaR = await new ThembaR(tokenArray[0]);
-    //     console.log("Token target", thembaR)
-    //     console.log(discovery)
-    //     console.log(await thembaR.getBalanceReloaded(discovery))
+    it('adding two new token to the list1', async function () {
+        assert.notEqual("The array is not empty and it should be",(await thembaRController.getAllTokens() == []), false)
+        await thembaRController.createBizToken(discovery, "Vatality","VP");//creating a new vitality token instance
+        await thembaRController.createBizToken(mnb, "Mugg and bean","MB");//creating a new MnB token instance
+        var tokenArray = await thembaRController.getAllTokens.call();//Get token array
+        assert.notEqual(tokenArray[0], undefined, "token array is empty aftering adding both parties to the array");
+
+        //making sure that the token array actually contains two items
+        assert.equal(true, (tokenArray.length == 2), "there should be two items in the token, namely Mnb and Vitality");
+
+        //making sure the items in the array is in fact the items created.
+        var dd = await ThembaR.at(tokenArray[0]);
+        assert.equal( (await dd.getOwner()), discovery, "the first token is not Vitality");
+
+        var mm = await ThembaR.at(tokenArray[1]);
+        assert.equal( (await mm.getOwner()), mnb, "the second token is not MnB");
+
+        // console.log( web3.utils.fromWei(discovery, "ether" ).toNumber());
+        //  console.log((await mm.getBalanceReloaded(discovery).c[0]));
+         //(mm.getBalanceReloaded(discovery).should.be.bignumber.equal(0));
 
     //    await thembaR.transferFrom(discovery,owner, 500, {from: discovery})
     //     console.log(await thembaR.getBalanceReloaded(owner))
@@ -44,29 +64,29 @@ contract('ThembaRController', function ([owner, discovery, mnb]) {
 
     //     console.log("after signing",await vatalityToken.getSignedPartners()); 
 
-    // })
-    
-    it('Get getPendingAgreements', async function () {//getSignedPartners
-        await thembaRController.createBizToken(discovery, "Vatality","VP")//Create vitality token
-        await thembaRController.createBizToken(mnb, "Mugg and bean","MB")//Create MnB token
-        var tokenArray = await thembaRController.getAllTokens.call();//Get token array
-        console.log(tokenArray);
-        vatalityToken = await ThembaR.at(tokenArray[0]);//Get vitality token JS abstraction
-        mnrToken = await ThembaR.at(tokenArray[1]);//Get MnB token JS abstraction
-
-        await vatalityToken.addAgreement(mnb, 2, 1, 3, true);//Create new agreement
-        list = await vatalityToken.getAgreementList.call(); 
-        agreementAddress = list[list.length-1];//Get new agreement's address
-        agreementContract = await Agreement.at(agreementAddress);//Get JS abstraction of agreement
-        console.log("before signing",await vatalityToken.getSignerUnSignedAgreements.call(mnb)); 
-        console.log(await agreementContract.getInfo.call());//Print agreement state
-
-        mnrToken.signAgreement(agreementAddress);//MnB signs agreement
-        console.log(await agreementContract.getInfo.call());//Print post signature state
-
-        console.log("after signing",await vatalityToken.getSignerUnSignedAgreements.call(mnb));  
-
     })
+    
+    // it('Get getPendingAgreements', async function () {//getSignedPartners
+    //     await thembaRController.createBizToken(discovery, "Vatality","VP")//Create vitality token
+    //     await thembaRController.createBizToken(mnb, "Mugg and bean","MB")//Create MnB token
+    //     var tokenArray = await thembaRController.getAllTokens.call();//Get token array
+    //     console.log(tokenArray);
+    //     vatalityToken = await ThembaR.at(tokenArray[0]);//Get vitality token JS abstraction
+    //     mnrToken = await ThembaR.at(tokenArray[1]);//Get MnB token JS abstraction
+
+    //     await vatalityToken.addAgreement(mnb, 2, 1, 3, true);//Create new agreement
+    //     list = await vatalityToken.getAgreementList.call(); 
+    //     agreementAddress = list[list.length-1];//Get new agreement's address
+    //     agreementContract = await Agreement.at(agreementAddress);//Get JS abstraction of agreement
+    //     console.log("before signing",await vatalityToken.getSignerUnSignedAgreements.call(mnb)); 
+    //     console.log(await agreementContract.getInfo.call());//Print agreement state
+
+    //     mnrToken.signAgreement(agreementAddress);//MnB signs agreement
+    //     console.log(await agreementContract.getInfo.call());//Print post signature state
+
+    //     console.log("after signing",await vatalityToken.getSignerUnSignedAgreements.call(mnb));  
+
+    // })
     // it('create agreement and port from customer vitality to mnb', async function () {
     //     await thembaRController.createBizToken(discovery, "Vatality","VP")//Create vitality token
     //     await thembaRController.createBizToken(mnb, "Mugg and bean","MB")//Create MnB token
