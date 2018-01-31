@@ -7,30 +7,50 @@ contract ThembaR is BasicToken {
     address[] private agreements;
     string public name; 
     string public symbol;
-    uint public INITIAL_SUPPLY = 533444344343;
+    uint public INITIAL_SUPPLY = 5000000000000;
 
-    function getOwner() public view returns (address) {
+    function getOwner() external view returns (address) {
         return owner;
     }
     function getBalanceReloaded(address accountHolder) public view returns (uint) {
         return balances[accountHolder];
-  }
-   function addAgreement(address _arrangee, uint _direction, uint _left, uint _right, bool _canPort) public {
-           // require(owner == msg.sender);
-             address a = new Agreement(owner, _arrangee,this, _direction,  _left, _right, _canPort);
-             agreements.push(a);
     }
-
+    function addAgreement(address _arrangee, uint _direction, uint _left, uint _right, bool _canPort) public {
+        // require(owner == msg.sender);
+        address a = new Agreement(owner, _arrangee,this, _direction,  _left, _right, _canPort);
+        agreements.push(a);
+    }
     function getAgreementList() public view returns (address[]) {
         return agreements;
     }
+    function getSignedPartners() public returns (address[]) {
+        address[] toReturn;
+        for (uint i = 0;i < agreements.length;i++) {
+            Agreement tempAgreement = Agreement(agreements[i]);
+            address signedSigner = tempAgreement.getSignedSigner();
+            if (signedSigner != 0x0) {
+                toReturn.push(signedSigner);
+            }
+        }
+        return toReturn;
+    }
+    function getSignerUnSignedAgreements(address _signer) public returns(address[]) {
+        address[] toReturn;
+        for (uint i = 0;i < agreements.length;i++) {
+            Agreement tempAgreement = Agreement(agreements[i]);
+            if (tempAgreement.amIUnsignedSigner(_signer)) {
+                toReturn.push(tempAgreement);
+            }
+        }
+        return toReturn;
+    }
    function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
-    //require(_to != address(0));
-    balances[_from] = balances[_from].sub(_value);
-    balances[_to] = balances[_to].add(_value);
-    Transfer(_from, _to, _value);
-    return true;
-  }
+        require(_to != address(0));
+        balances[_from] = balances[_from].sub(_value);
+        balances[_to] = balances[_to].add(_value);
+        Transfer(_from, _to, _value);
+        return true;
+    }
     function signAgreement(address _agreementAddress) public returns(bool) {
              //if (msg.sender == signer) {
                 Agreement toSign = Agreement(_agreementAddress);

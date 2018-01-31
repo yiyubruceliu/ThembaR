@@ -13,8 +13,7 @@ contract ThembaRController {
         _owner = msg.sender;
     }
     function createNewToken(string _name, string _symbol) public { //business should call this
-        ThembaR newToken = new ThembaR(msg.sender, _name, _symbol);
-        
+        ThembaR newToken = new ThembaR(msg.sender, _name, _symbol);    
         numTokens++;
         tokens[numTokens] = program(msg.sender,newToken);
     }
@@ -23,10 +22,17 @@ contract ThembaRController {
         numTokens++;
         tokens[numTokens] = program(ownerAdd,newToken);
     }
-    
-    function getCustomerTokens() external returns (address[]) {
+    function getAllTokens() external returns (address[]) {
+         address[] allTokens;
+        for (uint i = 1;i <= numTokens;i++) {
+            ThembaR temp = ThembaR(tokens[i].token);
+            allTokens.push(temp);
+        }
+        return allTokens;
+    } 
+    function getCustomerTokens() external view returns (address[]) {
         address[] customerTokens;
-        for (uint i=0;i<numTokens;i++) {
+        for (uint i = 1;i <= numTokens;i++) {
             ThembaR temp = ThembaR(tokens[i].token);
             if (temp.balanceOf(msg.sender) >= 0) {
                 customerTokens.push(temp);

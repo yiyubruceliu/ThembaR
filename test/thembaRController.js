@@ -23,72 +23,115 @@ contract('ThembaRController', function ([owner, discovery, mnb]) {
     //    // console.log(await thembaR.balanceOf(owner).valueOf())
     //     assert.notEqual((await thembaRController.getAllTokens() == []), true)
     // })
+    // it('Get signed partners', async function () {//getSignedPartners
+    //     await thembaRController.createBizToken(discovery, "Vatality","VP")//Create vitality token
+    //     await thembaRController.createBizToken(mnb, "Mugg and bean","MB")//Create MnB token
+    //     var tokenArray = await thembaRController.getAllTokens.call();//Get token array
+    //     console.log(tokenArray);
+    //     vatalityToken = await ThembaR.at(tokenArray[0]);//Get vitality token JS abstraction
+    //     mnrToken = await ThembaR.at(tokenArray[1]);//Get MnB token JS abstraction
 
-    it('create agreement and port from customer vitality to mnb', async function () {
+    //    console.log("before signing",await vatalityToken.getSignedPartners()); 
+
+    //     await vatalityToken.addAgreement(mnb, 2, 1, 3, true);//Create new agreement
+    //     list = await vatalityToken.getAgreementList.call(); 
+    //     agreementAddress = list[list.length-1];//Get new agreement's address
+    //     agreementContract = await Agreement.at(agreementAddress);//Get JS abstraction of agreement
+    //     console.log(await agreementContract.getInfo.call());//Print agreement state
+
+    //     mnrToken.signAgreement(agreementAddress);//MnB signs agreement
+    //     console.log(await agreementContract.getInfo.call());//Print post signature state
+
+    //     console.log("after signing",await vatalityToken.getSignedPartners()); 
+
+    // })
+    
+    it('Get getPendingAgreements', async function () {//getSignedPartners
         await thembaRController.createBizToken(discovery, "Vatality","VP")//Create vitality token
         await thembaRController.createBizToken(mnb, "Mugg and bean","MB")//Create MnB token
-        var tokenArray = await thembaRController.getAllTokens();//Get token array
-
-         vatalityToken = await ThembaR.at(tokenArray[0]);//Get vitality token JS abstraction
-         mnrToken = await ThembaR.at(tokenArray[1]);//Get MnB token JS abstraction
-
-        // Print out state of token accounts
-         console.log("Discovery balance of VP: ",await vatalityToken.getBalanceReloaded(discovery));//Discovery balance of VP
-         console.log("MnB balance of VP",await vatalityToken.getBalanceReloaded(mnb));//MnB balance of VP
-         console.log("Customer balance of VP",await vatalityToken.getBalanceReloaded(owner)); //Customer balance of VP
- 
-         console.log("MnB balance of MB",await mnrToken.getBalanceReloaded(mnb));//MnB balance of MB
-         console.log("Discovery balance of MB",await mnrToken.getBalanceReloaded(discovery));//Discovery balance of MB
-         console.log("Customer balance of MB",await mnrToken.getBalanceReloaded(owner));//Customer balance of MB
-         
-        await vatalityToken.transferFrom(discovery,owner, 500, {from: discovery})
-        await mnrToken.transferFrom(mnb,owner, 900, {from: discovery})
-
-        // Print out state of token accounts
-         console.log("Discovery balance of VP: ",await vatalityToken.getBalanceReloaded(discovery));//Discovery balance of VP
-         console.log("MnB balance of VP",await vatalityToken.getBalanceReloaded(mnb));//MnB balance of VP
-         console.log("Customer balance of VP",await vatalityToken.getBalanceReloaded(owner)); //Customer balance of VP
- 
-         console.log("MnB balance of MB",await mnrToken.getBalanceReloaded(mnb));//MnB balance of MB
-         console.log("Discovery balance of MB",await mnrToken.getBalanceReloaded(discovery));//Discovery balance of MB
-         console.log("Customer balance of MB",await mnrToken.getBalanceReloaded(owner));//Customer balance of MB
-
-        
+        var tokenArray = await thembaRController.getAllTokens.call();//Get token array
+        console.log(tokenArray);
+        vatalityToken = await ThembaR.at(tokenArray[0]);//Get vitality token JS abstraction
+        mnrToken = await ThembaR.at(tokenArray[1]);//Get MnB token JS abstraction
 
         await vatalityToken.addAgreement(mnb, 2, 1, 3, true);//Create new agreement
         list = await vatalityToken.getAgreementList.call(); 
         agreementAddress = list[list.length-1];//Get new agreement's address
         agreementContract = await Agreement.at(agreementAddress);//Get JS abstraction of agreement
+        console.log("before signing",await vatalityToken.getSignerUnSignedAgreements.call(mnb)); 
         console.log(await agreementContract.getInfo.call());//Print agreement state
 
-    
         mnrToken.signAgreement(agreementAddress);//MnB signs agreement
         console.log(await agreementContract.getInfo.call());//Print post signature state
 
-        console.log("Before the big moment")
+        console.log("after signing",await vatalityToken.getSignerUnSignedAgreements.call(mnb));  
 
-        // Print out state of token accounts
-        console.log("Discovery balance of VP: ",await vatalityToken.getBalanceReloaded(discovery));//Discovery balance of VP
-        console.log("MnB balance of VP",await vatalityToken.getBalanceReloaded(mnb));//MnB balance of VP
-        console.log("Customer balance of VP",await vatalityToken.getBalanceReloaded(owner)); //Customer balance of VP
-
-        console.log("MnB balance of MB",await mnrToken.getBalanceReloaded(mnb));//MnB balance of MB
-        console.log("Discovery balance of MB",await mnrToken.getBalanceReloaded(discovery));//Discovery balance of MB
-        console.log("Customer balance of MB",await mnrToken.getBalanceReloaded(owner));//Customer balance of MB
-    
-        console.log("herer comes the big moment")
-        await agreementContract.port(owner, tokenArray[0], 400, agreementAddress);
-
-        // Print out state of token accounts
-        console.log("Discovery balance of VP: ",await vatalityToken.getBalanceReloaded(discovery));//Discovery balance of VP
-        console.log("MnB balance of VP",await vatalityToken.getBalanceReloaded(mnb));//MnB balance of VP
-        console.log("Customer balance of VP",await vatalityToken.getBalanceReloaded(owner)); //Customer balance of VP
-
-        console.log("MnB balance of MB",await mnrToken.getBalanceReloaded(mnb));//MnB balance of MB
-        console.log("Discovery balance of MB",await mnrToken.getBalanceReloaded(discovery));//Discovery balance of MB
-        console.log("Customer balance of MB",await mnrToken.getBalanceReloaded(owner));//Customer balance of MB
-
-    //     assert.notEqual((await thembaRController.getAllTokens() == []), true)
     })
+    // it('create agreement and port from customer vitality to mnb', async function () {
+    //     await thembaRController.createBizToken(discovery, "Vatality","VP")//Create vitality token
+    //     await thembaRController.createBizToken(mnb, "Mugg and bean","MB")//Create MnB token
+    //     var tokenArray = await thembaRController.getAllTokens();//Get token array
+
+    //      vatalityToken = await ThembaR.at(tokenArray[0]);//Get vitality token JS abstraction
+    //      mnrToken = await ThembaR.at(tokenArray[1]);//Get MnB token JS abstraction
+
+    //     // Print out state of token accounts
+    //      console.log("Discovery balance of VP: ",await vatalityToken.getBalanceReloaded(discovery));//Discovery balance of VP
+    //      console.log("MnB balance of VP",await vatalityToken.getBalanceReloaded(mnb));//MnB balance of VP
+    //      console.log("Customer balance of VP",await vatalityToken.getBalanceReloaded(owner)); //Customer balance of VP
+ 
+    //      console.log("MnB balance of MB",await mnrToken.getBalanceReloaded(mnb));//MnB balance of MB
+    //      console.log("Discovery balance of MB",await mnrToken.getBalanceReloaded(discovery));//Discovery balance of MB
+    //      console.log("Customer balance of MB",await mnrToken.getBalanceReloaded(owner));//Customer balance of MB
+         
+    //     await vatalityToken.transferFrom(discovery,owner, 500, {from: discovery})
+    //     await mnrToken.transferFrom(mnb,owner, 900, {from: discovery})
+
+    //     // Print out state of token accounts
+    //      console.log("Discovery balance of VP: ",await vatalityToken.getBalanceReloaded(discovery));//Discovery balance of VP
+    //      console.log("MnB balance of VP",await vatalityToken.getBalanceReloaded(mnb));//MnB balance of VP
+    //      console.log("Customer balance of VP",await vatalityToken.getBalanceReloaded(owner)); //Customer balance of VP
+ 
+    //      console.log("MnB balance of MB",await mnrToken.getBalanceReloaded(mnb));//MnB balance of MB
+    //      console.log("Discovery balance of MB",await mnrToken.getBalanceReloaded(discovery));//Discovery balance of MB
+    //      console.log("Customer balance of MB",await mnrToken.getBalanceReloaded(owner));//Customer balance of MB
+
+        
+
+    //     await vatalityToken.addAgreement(mnb, 2, 1, 3, true);//Create new agreement
+    //     list = await vatalityToken.getAgreementList.call(); 
+    //     agreementAddress = list[list.length-1];//Get new agreement's address
+    //     agreementContract = await Agreement.at(agreementAddress);//Get JS abstraction of agreement
+    //     console.log(await agreementContract.getInfo.call());//Print agreement state
+
+    
+    //     mnrToken.signAgreement(agreementAddress);//MnB signs agreement
+    //     console.log(await agreementContract.getInfo.call());//Print post signature state
+
+    //     console.log("Before the big moment")
+
+    //     // Print out state of token accounts
+    //     console.log("Discovery balance of VP: ",await vatalityToken.getBalanceReloaded(discovery));//Discovery balance of VP
+    //     console.log("MnB balance of VP",await vatalityToken.getBalanceReloaded(mnb));//MnB balance of VP
+    //     console.log("Customer balance of VP",await vatalityToken.getBalanceReloaded(owner)); //Customer balance of VP
+
+    //     console.log("MnB balance of MB",await mnrToken.getBalanceReloaded(mnb));//MnB balance of MB
+    //     console.log("Discovery balance of MB",await mnrToken.getBalanceReloaded(discovery));//Discovery balance of MB
+    //     console.log("Customer balance of MB",await mnrToken.getBalanceReloaded(owner));//Customer balance of MB
+    
+    //     console.log("herer comes the big moment")
+    //     await agreementContract.port(owner, tokenArray[0], 400, agreementAddress);
+
+    //     // Print out state of token accounts
+    //     console.log("Discovery balance of VP: ",await vatalityToken.getBalanceReloaded(discovery));//Discovery balance of VP
+    //     console.log("MnB balance of VP",await vatalityToken.getBalanceReloaded(mnb));//MnB balance of VP
+    //     console.log("Customer balance of VP",await vatalityToken.getBalanceReloaded(owner)); //Customer balance of VP
+
+    //     console.log("MnB balance of MB",await mnrToken.getBalanceReloaded(mnb));//MnB balance of MB
+    //     console.log("Discovery balance of MB",await mnrToken.getBalanceReloaded(discovery));//Discovery balance of MB
+    //     console.log("Customer balance of MB",await mnrToken.getBalanceReloaded(owner));//Customer balance of MB
+
+    // //     assert.notEqual((await thembaRController.getAllTokens() == []), true)
+    // })
   
 })

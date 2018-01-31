@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
-import * as Web3 from 'web3';
-import * as contract from 'truffle-contract';
-//import Web3 from 'web3';
-//import {default as contract} from 'truffle-contract';
+//import * as Web3 from 'web3';
+// import * as contract from 'truffle-contract';
+import Web3 from 'web3';
+import {default as contract} from 'truffle-contract';
 import {Subject} from 'rxjs/Rx';
 
 declare let window: any;

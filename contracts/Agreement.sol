@@ -10,7 +10,7 @@ import "./ThembaR.sol";
         uint  direction;
         uint left;
         uint right;
-        bool  signed;
+        bool public signed;
         bool canPort;
 
         function Agreement(address me, address _signer, address _ownerToken, uint _direction, uint _left, uint _right, bool _canPort) public {
@@ -30,6 +30,18 @@ import "./ThembaR.sol";
                     return true;
             // }
              //return false;    
+        }
+        function getSignedSigner() public view returns(address) {
+            if (signed)
+                return signerToken;
+            return 0x0;
+        }
+        function amIUnsignedSigner(address _signer) public view returns(bool) {
+            if (!signed) {
+                if (signer == _signer)
+                    return true;
+            }
+            return false;
         }
         function checkCredential(address _from) private view returns (bool) {
             return (direction == 2 || (direction == 0 && _from == owner) || (direction == 1 && _from == signer));
