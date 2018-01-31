@@ -10,10 +10,13 @@ export class Web3Service {
   private web3: Web3;
   private accounts: string[];
   public ready = false;
-  public MetaCoin: any;
+  // public ThembaRController: any;
+  // public ThembaR: any;
+  public Agreement: any;
   public accountsObservable = new Subject<string[]>();
 
   constructor() {
+    
     window.addEventListener('load', (event) => {
       this.bootstrapWeb3();
     });
@@ -23,6 +26,8 @@ export class Web3Service {
     // Checking if Web3 has been injected by the browser (Mist/MetaMask)
     if (typeof window.web3 !== 'undefined') {
       // Use Mist/MetaMask's provider
+      console.log(window.web3.currentProvider);
+      console.log("FOK: "+typeof(Web3));
       this.web3 = new Web3(window.web3.currentProvider);
     } else {
       console.log('No web3? You should consider trying MetaMask!');

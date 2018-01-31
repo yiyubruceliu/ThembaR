@@ -10,8 +10,8 @@
     {
         "name":"Weirdly Colourful Pants",
         "loyalty":"Bootlegger",
-        "unit":"Legs",
-        "symbol":"L",
+        "unit":"Stitches",
+        "symbol":"STS",
         "logo":"/assets/testImages/pants.jpg",
         "address":"0x2191eF87E392377ec08E7c08Eb105Ef5448eCED5"
     },

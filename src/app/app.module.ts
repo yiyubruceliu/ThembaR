@@ -1,4 +1,5 @@
-import { BusinessModule } from './business/business.module';
+import { UtilModule } from './util/util.module';
+
 import { NotFoundComponent } from './not-found/not-found.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -9,8 +10,10 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import {ClientModule} from './client/client.module';
+import { BusinessModule } from './business/business.module';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './client/dashboard/dashboard.component';
+
 
 
 
@@ -32,7 +35,8 @@ import { DashboardComponent } from './client/dashboard/dashboard.component';
     RouterModule.forRoot([
       {path: '', component:LoginComponent},
       {path: '**', component:NotFoundComponent}
-    ])
+    ]),
+    UtilModule
   ],
   providers: [],
   bootstrap: [AppComponent]

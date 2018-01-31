@@ -6,6 +6,9 @@ import { HttpModule } from '@angular/http';
 import { MatButtonModule, MatDividerModule, MatGridListModule, MatFormFieldModule, MAT_LABEL_GLOBAL_OPTIONS, MatOptionModule, MatSelectModule, MatInputModule, MatCheckboxModule } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+
+
+import { UtilModule } from '../util/util.module';
 import { MainComponent } from './main/main.component';
 import { CustomersComponent } from './customers/customers.component';
 import { PartnersComponent } from './partners/partners.component';
@@ -40,9 +43,11 @@ import { AddCutomerToProgramComponent } from './add-cutomer-to-program/add-cutom
       {path: 'approve-agreement', component:ApproveAgreementComponent},
       {path: 'earn-points', component:EarnPointsComponent},
       {path: 'add-customer-to-program', component:AddCutomerToProgramComponent}
-    ])
+    ]),
+    UtilModule
   ],
   declarations: [MainComponent, CustomersComponent, PartnersComponent, RegisterComponent, CreateAgreementComponent, ApproveAgreementComponent, EarnPointsComponent, AddCutomerToProgramComponent],
-  providers:[]
+  providers:[],
+  exports:[MainComponent, CustomersComponent, PartnersComponent, RegisterComponent, CreateAgreementComponent, ApproveAgreementComponent, EarnPointsComponent, AddCutomerToProgramComponent]
 })
 export class BusinessModule { }
