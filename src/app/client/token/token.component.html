@@ -1,12 +1,12 @@
 <div class="viewContainer">
   <div class="headerCardContainer row">
     <div class="col-md-6">
-      <h4>Here goes customer details</h4>
+      <h4>Jacques Nakamoto</h4>
       Loyalty Programs
     </div>
     <div class="col-md-6">
-      <h4>Here goes Customer/Program Details</h4>
-      Loyalty Programs
+      <h4>Weirdly Colourful Pants</h4>
+      Bootlegger: 500 stitches
     </div>
   </div>
 
@@ -23,7 +23,7 @@
 
     <mat-form-field [floatLabel]="auto">
       <input matInput placeholder="Amount" required name="amount">
-      <span matPrefix>$&nbsp;</span>
+      <span matPrefix>Stitches&nbsp;</span>
       <mat-error *ngIf="amount">No no</mat-error>
     </mat-form-field>
 
@@ -36,7 +36,7 @@
     </mat-form-field>
     <br>
     <div class="formButtonContainer">
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button mat-button (click)="openSnackBar('Transaction', 'Successful!')" style="color:white">Submit</button>
     </div>
 
   </form>

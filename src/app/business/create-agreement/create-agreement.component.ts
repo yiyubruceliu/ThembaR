@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-create-agreement',
@@ -9,7 +9,13 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class CreateAgreementComponent implements OnInit {
 
-  constructor() { }
+  constructor(public snackBar: MatSnackBar) { }
+
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 2000,
+    });
+  }
 
   agreement: AgreementObj = { 
     owner: "",

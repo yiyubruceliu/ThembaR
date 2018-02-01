@@ -56,7 +56,7 @@ contract ThembaR is BasicToken, AccessRestriction {
     }
     //get the agreements of the _signer that are not signed, this can be requested by the signer to verify if they have signed
     function getSignerUnSignedAgreements(address _signer) public returns(address[]) {
-        address[] toReturn;
+         address[] toReturn;
         for (uint i = 0;i < agreements.length;i++) {
             Agreement tempAgreement = Agreement(agreements[i]);
             if (tempAgreement.amIUnsignedSigner(_signer)) {

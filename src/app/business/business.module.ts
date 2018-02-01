@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { MatButtonModule, MatDividerModule, MatGridListModule, MatFormFieldModule, MAT_LABEL_GLOBAL_OPTIONS, MatOptionModule, MatSelectModule, MatInputModule, MatCheckboxModule } from '@angular/material';
+import { MatButtonModule, MatDividerModule, MatGridListModule, MatFormFieldModule, MatSnackBar, MatSnackBarModule, MAT_LABEL_GLOBAL_OPTIONS, MatOptionModule, MatSelectModule, MatInputModule, MatCheckboxModule } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 
@@ -31,6 +31,7 @@ import { AddCutomerToProgramComponent } from './add-cutomer-to-program/add-cutom
     MatSelectModule,
     MatCheckboxModule,
     MatInputModule,
+    MatSnackBarModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,

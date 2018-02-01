@@ -30,7 +30,7 @@ export class ApproveAgreementComponent implements OnInit {
   partners = [
     {address: 'Test 1', viewValue: 'Harry Salon'},
     {address: 'Test 2', viewValue: 'Max Weeves'},
-    {address: 'Test 3', viewValue: 'Three'}
+    {address: 'Test 3', viewValue: 'Big Mommy Cake Pillows'}
   ];
   selection = 3;
 }

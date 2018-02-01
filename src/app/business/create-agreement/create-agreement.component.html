@@ -1,8 +1,8 @@
 <div class="viewContainer">
-    <h4 class="viewHeader">Register Loyalty Program</h4>
+    <h4 class="viewHeader">Set up Partnership Agreement</h4>
     <form class="basicForm">
       <mat-form-field [floatLabel]="auto">
-        <input matInput placeholder="Company 1" required [(ngModel)]="agreement.owner" name="company1">
+        <input matInput placeholder="Company 1" required [(ngModel)]="agreement.owner" name="company1" value="Weirdly Colourful Pants">
       </mat-form-field>
   
       <mat-form-field [floatLabel]="auto">
@@ -47,7 +47,7 @@
       
 
       <div class="formButtonContainer">
-          <button type="submit" class="btn btn-primary" >Submit</button>
+        <button mat-button (click)="openSnackBar('Transaction', 'Successful!')" style="color:white">Submit</button>
       </div>
       
     </form>

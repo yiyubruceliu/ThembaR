@@ -22,7 +22,7 @@ contract ThembaRController {
         numTokens++;
         tokens[numTokens] = program(ownerAdd,newToken);
     }
-    function getAllTokens() external returns (address[]) {
+    function getAllTokens() public returns (address[]) {
          address[] allTokens;
         for (uint i = 1;i <= numTokens;i++) {
             ThembaR temp = ThembaR(tokens[i].token);
@@ -30,7 +30,7 @@ contract ThembaRController {
         }
         return allTokens;
     } 
-    function getCustomerTokens() external view returns (address[]) {
+    function getCustomerTokens() public returns (address[]) {
         address[] customerTokens;
         for (uint i = 1;i <= numTokens;i++) {
             ThembaR temp = ThembaR(tokens[i].token);

@@ -16,14 +16,6 @@
             </mat-select>
           </mat-form-field>
 
-        <mat-form-field [floatLabel]="auto" *ngIf="selection>=2">
-            <mat-select placeholder="Partner">
-              <mat-option *ngFor="let partner of partners" [value]="partner.address">
-                {{ partner.viewValue }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-
           <mat-form-field [floatLabel]="auto">
               <input matInput placeholder="Amount" required name="amount">
               <span matPrefix>Points: &nbsp;</span>
@@ -32,6 +24,6 @@
 
           <br>
           <div class="formButtonContainer">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button mat-button (click)="openSnackBar('Transaction', 'Successful!')" style="color:white">Submit</button>
           </div>
     </form>
